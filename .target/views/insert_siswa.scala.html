@@ -1,0 +1,15 @@
+@(siswaFrom : play.data.Form[Siswa])
+
+@main("Aplikasi Dewantara") {
+	@if(siswaFrom.value().isDefined()){
+		<p>Data Siswa Berhasil diimputkan</p>
+	}else{
+		@helper.form(action = "/insert_siswa"){
+			@helper.inputText(siswaFrom("nim"))
+			@helper.inputText(siswaFrom("name"))
+			@helper.inputText(siswaFrom("address"))
+			<input type="submit" name="simpan" value="Simpan"/>
+		}
+		
+	}
+}

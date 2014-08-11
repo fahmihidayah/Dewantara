@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+GET		/insert						 controllers.ApplicationSiswa.insert()
+POST	/insert_siswa			     controllers.ApplicationSiswa.insert()
+GET		/edit						 controllers.ApplicationSiswa.edit()
+GET		/delete						 controllers.ApplicationSiswa.delete()
+GET		/list						 controllers.ApplicationSiswa.getList()
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
