@@ -10,6 +10,8 @@ import play.db.ebean.Model.Finder;
 @Entity
 public class Siswa extends Model{
 	@Id
+	
+	public Long id;
 	@Required
 	public String nim;
 	@Required
