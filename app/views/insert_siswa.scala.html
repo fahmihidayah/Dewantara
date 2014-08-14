@@ -4,7 +4,7 @@
 	@if(siswaFrom.value().isDefined()){
 		<p>Data Siswa Berhasil diimputkan</p>
 	}else{
-		@helper.form(action = "/insert_siswa"){
+		@helper.form(action = routes.ApplicationSiswa.insert){
 			@helper.inputText(siswaFrom("nim"))
 			@helper.inputText(siswaFrom("name"))
 			@helper.inputText(siswaFrom("address"))
