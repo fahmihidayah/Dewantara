@@ -134,7 +134,19 @@ public class CrudHandler<T extends Model> implements Constants{
 	}
 	
 	public Map findKey(Form form, String [] listKey){
+		Map<String, Object> requestMap = form.data();
 		HashMap<String, Object> map = new HashMap<>();
+		if(checkAuth){
+			String authKeyStatus =  findAuth(requestMap);
+			if(!authKeyStatus.equalsIgnoreCase(SUCCESS)){
+				map.put(ERROR, authKeyStatus);
+				return map;
+			}
+			else {
+				map.put(AUTH_KEY, requestMap.get(AUTH_KEY));
+			}
+		}
+		
 		for (String string : listKey) {
 			String key = (String) form.data().get(string);
 			if(key == null){

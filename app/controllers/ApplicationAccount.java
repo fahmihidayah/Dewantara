@@ -22,6 +22,7 @@ import play.*;
 public class ApplicationAccount extends Controller{
 	public static Form<User> frmAccount = Form.form(User.class);
 	public static CrudHandler<User> crudHandler = new CrudHandler<User>();
+	
 	public static Result insert(){
 		return crudHandler.create(frmAccount.bindFromRequest());
 	}
