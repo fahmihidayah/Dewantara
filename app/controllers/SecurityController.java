@@ -2,6 +2,7 @@ package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.google.gson.Gson;
 
 import models.Auth;
 import models.User;
@@ -16,6 +17,7 @@ import play.mvc.Result;
 public class SecurityController extends Controller{
 	public final static String AUTH_TOKEN_HEADER = "X-AUTH-TOKEN";
     public static final String AUTH_TOKEN = "authToken";
+    public static String ACCOUNT  = "accountType";
     /**
      * never used
      * @return
@@ -42,7 +44,10 @@ public class SecurityController extends Controller{
     		auth.save();
     		response().setCookie(AUTH_TOKEN, auth.authToken);
     		ObjectNode data = Json.newObject();
+    		
     		data.put(AUTH_TOKEN, auth.authToken);
+    		data.put("userName", login.userName);
+    		data.put(ACCOUNT, user.type);
     		return ok(JsonHandler.getSuitableResponse(data, true));
     	}
     }

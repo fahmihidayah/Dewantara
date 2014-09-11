@@ -6,4 +6,5 @@ public interface Constants {
 	public static String USER_NOT_FOUND = "You're not login yet";
 	public static String SUCCESS = "OK";
 	public static String AUTH_KEY = "auth_key";
+	public static String ACCOUNT  = "account";
 }

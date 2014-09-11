@@ -18,13 +18,19 @@ POST   /api/test/create_account        controllers.ApplicationAccount.insert()
 POST   /api/test/read_account          controllers.ApplicationAccount.list()
 POST   /api/test/update_account        controllers.ApplicationAccount.edit()
 POST   /api/test/delete_account        controllers.ApplicationAccount.delete()
-POST   /api/test/add_account_to_guru   controllers.ApplicationAccount.addAccountToGuru()
 
 #security api
 
 POST   /api/test/login                 controllers.SecurityController.login()
 POST   /api/test/logout                controllers.SecurityController.logout()
 
+#guru api
+
+POST   /api/test/create_guru           controllers.ApplicationGuru.insert()
+POST   /api/test/read_guru             controllers.ApplicationGuru.list()
+POST   /api/test/update_guru           controllers.ApplicationGuru.edit()
+POST   /api/test/delete_guru           controllers.ApplicationGuru.delete()
+POST   /api/test/add_account_to_guru   controllers.ApplicationGuru.addGuruAccount()
 
 # Map static resources from the /public folder to the /assets URL path
 GET    /assets/*file                   controllers.Assets.at(path="/public", file)

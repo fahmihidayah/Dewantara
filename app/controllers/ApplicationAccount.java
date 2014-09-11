@@ -38,12 +38,5 @@ public class ApplicationAccount extends Controller{
 	public static Result list(){
 		return crudHandler.read(frmAccount.bindFromRequest(), User.finder);
 	}
-	
-	public static Result addAccountToGuru(){
-		Form<User> requestMap = frmAccount.bindFromRequest();
-		String arrayKey [] = {""};
-		
-		return TODO;
-	}
 
 }
