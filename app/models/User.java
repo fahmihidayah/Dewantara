@@ -35,9 +35,10 @@ public class User extends Model {
 // uncomment the transient to delete password column and more secure 
 //	@Transient
 	@JsonIgnore
-//	@Required
 	public String password ;
 	
+	@Column
+	public String type = "ADMIN";
 //	@Column(nullable = false)
 //	public Date dateCreation = new Date();
 

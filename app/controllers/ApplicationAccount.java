@@ -40,6 +40,9 @@ public class ApplicationAccount extends Controller{
 	}
 	
 	public static Result addAccountToGuru(){
+		Form<User> requestMap = frmAccount.bindFromRequest();
+		String arrayKey [] = {""};
+		
 		return TODO;
 	}
 
