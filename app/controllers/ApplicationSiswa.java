@@ -14,7 +14,11 @@ import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.helper.form;
-
+/**
+ * fix
+ * @author fahmi
+ *
+ */
 public class ApplicationSiswa extends Controller {
 	public static Form<Siswa> frmSiswa = Form.form(Siswa.class);
 	public static CrudHandler<Siswa> crudHandler = new CrudHandler<Siswa>(true);

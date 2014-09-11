@@ -21,7 +21,11 @@ import play.data.Form;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
-
+/**
+ * fix
+ * @author fahmi
+ *
+ */
 public class ApplicationAbsensi extends Controller implements Constants{
 	
 	public static Form<Absensi> frmAbsensi = Form.form(Absensi.class);

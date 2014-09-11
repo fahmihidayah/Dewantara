@@ -14,6 +14,11 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.*;
+/**
+ * fix
+ * @author fahmi
+ *
+ */
 public class ApplicationAccount extends Controller{
 	public static Form<User> frmAccount = Form.form(User.class);
 	public static CrudHandler<User> crudHandler = new CrudHandler<User>();

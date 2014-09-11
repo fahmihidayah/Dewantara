@@ -15,6 +15,11 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.*;
+/**
+ * not fix yet
+ * @author fahmi
+ *
+ */
 public class ApplicationGuru extends Controller{
 	public static Form<Guru> frmGuru = Form.form(Guru.class);
 	public static CrudHandler<Guru> crudHandler = new CrudHandler<Guru>(false);

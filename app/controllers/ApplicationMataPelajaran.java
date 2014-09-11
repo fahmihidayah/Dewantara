@@ -14,6 +14,12 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.*;
+
+/**
+ * fix
+ * @author fahmi
+ *
+ */
 public class ApplicationMataPelajaran extends Controller{
 	public static Form<MataPelajaran> frmMataPelajaran = Form.form(MataPelajaran.class);
 	public static CrudHandler<MataPelajaran> crudHandler = new CrudHandler<MataPelajaran>(true);

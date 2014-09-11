@@ -15,7 +15,11 @@ import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import scala.annotation.meta.param;
-
+/**
+ * fix
+ * @author fahmi
+ *
+ */
 public class ApplicationOrangTua extends Controller implements Constants {
 	public static Form<OrangTua> frmOrangTua = Form.form(OrangTua.class);
 	public static CrudHandler<OrangTua> crudHandler = new CrudHandler<OrangTua>(

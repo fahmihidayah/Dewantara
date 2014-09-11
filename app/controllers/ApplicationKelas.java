@@ -17,7 +17,11 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.*;
-
+/**
+ * fix
+ * @author fahmi
+ *
+ */
 public class ApplicationKelas extends Controller implements Constants{
 	public static Form<Kelas> frmKelas = Form.form(Kelas.class);
 	public static CrudHandler<Kelas> crudHandler = new CrudHandler<Kelas>(true);
