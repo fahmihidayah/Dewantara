@@ -30,11 +30,13 @@ public class User extends Model {
 	@Column(unique = true, length = 256, nullable = false)
 	public String userName;
 
+	@JsonIgnore
 	@Column(length = 64, nullable = false)
 	public byte[] shaPassword;
 // uncomment the transient to delete password column and more secure 
 //	@Transient
-	@JsonIgnore
+//	@JsonIgnore
+	@Column
 	public String password ;
 	
 	@Column

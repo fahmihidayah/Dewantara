@@ -5,6 +5,8 @@
 # Home page
 GET    /                               controllers.Application.index()
 
+#meta data
+POST	/api/test/metadata			controllers.Application.getMetadata()
 
 #siswa api
 POST   /api/test/create_siswa          controllers.ApplicationSiswa.insert()

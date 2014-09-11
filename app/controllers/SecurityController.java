@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.gson.Gson;
 
 import models.Auth;
+import models.Guru;
 import models.User;
 import fahmi.lib.JsonHandler;
 import play.data.Form;
@@ -47,7 +48,9 @@ public class SecurityController extends Controller{
     		
     		data.put(AUTH_TOKEN, auth.authToken);
     		data.put("userName", login.userName);
+    		data.put("password", login.password);
     		data.put(ACCOUNT, user.type);
+    		
     		return ok(JsonHandler.getSuitableResponse(data, true));
     	}
     }

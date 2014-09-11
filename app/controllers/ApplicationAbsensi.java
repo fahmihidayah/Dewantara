@@ -48,7 +48,7 @@ public class ApplicationAbsensi extends Controller implements Constants{
 			return badRequest(JsonHandler.getSuitableResponse(message, false));
 		}
 		
-		Guru guru = Guru.finder.byId((String)map.get("nik"));
+		Guru guru = Guru.finder.byId((String) map.get("nik"));
 		if(guru == null){
 			return badRequest(JsonHandler.getSuitableResponse("guru not found", false));
 		}
