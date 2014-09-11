@@ -1,22 +1,37 @@
 package models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
-import play.db.ebean.Model.Finder;
 
 @Entity
-public class Siswa extends Model{
+public class Siswa extends Model {
+	
 	@Id
-	public Long id;
 	@Required
 	public String nim;
+	
 	@Required
 	public String name;
+	
 	@Required
 	public String address;
 	
-	public static Finder<Long, Siswa> find = new Finder<Long, Siswa>(Long.class, Siswa.class);
+	@JsonIgnore
+	@ManyToOne(cascade = CascadeType.ALL)
+	public Kelas kelas;
+	
+	@JsonIgnore
+	@ManyToOne(cascade = CascadeType.ALL)
+	public OrangTua orangTua;
+	
+	public static Finder<String, Siswa> finder = new Finder<String, Siswa>(String.class, Siswa.class);
 }

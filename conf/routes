@@ -4,11 +4,6 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-#api for siswa
-POST	/api/insert					 controllers.ApplicationSiswa.insert()
-POST	/api/edit					 controllers.ApplicationSiswa.edit()
-POST	/delete/:id					 controllers.ApplicationSiswa.delete(id : Long)
-POST	/list						 controllers.ApplicationSiswa.getList()
-			
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
