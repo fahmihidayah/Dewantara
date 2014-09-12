@@ -14,6 +14,14 @@ create table absensi (
   constraint pk_absensi primary key (id_absensi))
 ;
 
+create table admin (
+  id                        bigint auto_increment not null,
+  name                      varchar(255),
+  address                   varchar(255),
+  user_id                   bigint,
+  constraint pk_admin primary key (id))
+;
+
 create table auth (
   id_auth                   bigint auto_increment not null,
   auth_token                varchar(255),
@@ -75,12 +83,14 @@ alter table absensi add constraint fk_absensi_mataPelajaran_2 foreign key (ID_MA
 create index ix_absensi_mataPelajaran_2 on absensi (ID_MATAPELAJARAN);
 alter table absensi add constraint fk_absensi_siswa_3 foreign key (SISWA_NIM) references siswa (nim) on delete restrict on update restrict;
 create index ix_absensi_siswa_3 on absensi (SISWA_NIM);
-alter table guru add constraint fk_guru_account_4 foreign key (account_id) references user (id) on delete restrict on update restrict;
-create index ix_guru_account_4 on guru (account_id);
-alter table siswa add constraint fk_siswa_kelas_5 foreign key (kelas_id_kelas) references kelas (id_kelas) on delete restrict on update restrict;
-create index ix_siswa_kelas_5 on siswa (kelas_id_kelas);
-alter table siswa add constraint fk_siswa_orangTua_6 foreign key (orang_tua_id_orang_tua) references orang_tua (id_orang_tua) on delete restrict on update restrict;
-create index ix_siswa_orangTua_6 on siswa (orang_tua_id_orang_tua);
+alter table admin add constraint fk_admin_user_4 foreign key (user_id) references user (id) on delete restrict on update restrict;
+create index ix_admin_user_4 on admin (user_id);
+alter table guru add constraint fk_guru_account_5 foreign key (account_id) references user (id) on delete restrict on update restrict;
+create index ix_guru_account_5 on guru (account_id);
+alter table siswa add constraint fk_siswa_kelas_6 foreign key (kelas_id_kelas) references kelas (id_kelas) on delete restrict on update restrict;
+create index ix_siswa_kelas_6 on siswa (kelas_id_kelas);
+alter table siswa add constraint fk_siswa_orangTua_7 foreign key (orang_tua_id_orang_tua) references orang_tua (id_orang_tua) on delete restrict on update restrict;
+create index ix_siswa_orangTua_7 on siswa (orang_tua_id_orang_tua);
 
 
 
@@ -89,6 +99,8 @@ create index ix_siswa_orangTua_6 on siswa (orang_tua_id_orang_tua);
 SET FOREIGN_KEY_CHECKS=0;
 
 drop table absensi;
+
+drop table admin;
 
 drop table auth;
 
