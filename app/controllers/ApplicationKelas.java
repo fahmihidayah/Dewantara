@@ -44,7 +44,7 @@ public class ApplicationKelas extends Controller implements Constants{
 
 	public static Result addSiswa() {
 		Form<Kelas> frmKelas = Form.form(Kelas.class).bindFromRequest();
-		String listKey[] = {"auth_key", "idKelas", "nim"};
+		String listKey[] = {"idKelas", "nim"};
 		Map<String, Object> resultData = crudHandler.findKey(frmKelas, listKey);
 		if(resultData.containsKey(ERROR)){
 			return badRequest(JsonHandler.getSuitableResponse(resultData.get(ERROR), false));
@@ -72,7 +72,7 @@ public class ApplicationKelas extends Controller implements Constants{
 
 	public static Result removeSiswa() {
 		Form<Kelas> frmKelas = Form.form(Kelas.class).bindFromRequest();
-		String listKey[] = {"auth_key", "idKelas", "nim"};
+		String listKey[] = {"idKelas", "nim"};
 		Map<String, Object> resultData = crudHandler.findKey(frmKelas, listKey);
 		if(resultData.containsKey(ERROR)){
 			return badRequest(JsonHandler.getSuitableResponse(resultData.get(ERROR), false));
