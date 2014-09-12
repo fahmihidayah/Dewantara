@@ -57,6 +57,12 @@ POST   /api/test/read_matapelajaran            controllers.ApplicationMataPelaja
 POST   /api/test/update_matapelajaran          controllers.ApplicationMataPelajaran.edit()
 POST   /api/test/delete_matapelajaran          controllers.ApplicationMataPelajaran.delete()
 
+#admin api
+POST   /api/test/create_admin                  controllers.ApplicationAdmin.createAdmin()
+POST   /api/test/read_admin                    controllers.ApplicationAdmin.readAdmin()
+POST   /api/test/update_admin                  controllers.ApplicationAdmin.updateAdmin()
+POST   /api/test/delete_admin                  controllers.ApplicationAdmin.deleteAdmin() 
+POST   /api/test/add_user_to_admin             controllers.ApplicationAdmin.addUserToAdmin()
 
 # Map static resources from the /public folder to the /assets URL path
 GET    /assets/*file                           controllers.Assets.at(path="/public", file)
