@@ -3,45 +3,60 @@
 # ~~~~
 
 # Home page
-GET    /                                   controllers.Application.index()
+GET    /                                       controllers.Application.index()
 
 #meta data
-POST   /api/test/metadata                  controllers.Application.getMetadata()
+POST   /api/test/metadata                      controllers.Application.getMetadata()
 
 #siswa api
-POST   /api/test/create_siswa              controllers.ApplicationSiswa.insert()
-POST   /api/test/read_siswa                controllers.ApplicationSiswa.list()
-POST   /api/test/update_siswa              controllers.ApplicationSiswa.edit()
-POST   /api/test/delete_siswa              controllers.ApplicationSiswa.delete()
+POST   /api/test/create_siswa                  controllers.ApplicationSiswa.insert()
+POST   /api/test/read_siswa                    controllers.ApplicationSiswa.list()
+POST   /api/test/update_siswa                  controllers.ApplicationSiswa.edit()
+POST   /api/test/delete_siswa                  controllers.ApplicationSiswa.delete()
 
 #account api
 
-POST   /api/test/create_account            controllers.ApplicationAccount.insert()
-POST   /api/test/read_account              controllers.ApplicationAccount.list()
-POST   /api/test/update_account            controllers.ApplicationAccount.edit()
-POST   /api/test/delete_account            controllers.ApplicationAccount.delete()
+POST   /api/test/create_account                controllers.ApplicationAccount.insert()
+POST   /api/test/read_account                  controllers.ApplicationAccount.list()
+POST   /api/test/update_account                controllers.ApplicationAccount.edit()
+POST   /api/test/delete_account                controllers.ApplicationAccount.delete()
 
 #security api
 
-POST   /api/test/login                     controllers.SecurityController.login()
-POST   /api/test/logout                    controllers.SecurityController.logout()
+POST   /api/test/login                         controllers.SecurityController.login()
+POST   /api/test/logout                        controllers.SecurityController.logout()
 
 #guru api
 
-POST   /api/test/create_guru               controllers.ApplicationGuru.insert()
-POST   /api/test/read_guru                 controllers.ApplicationGuru.list()
-POST   /api/test/update_guru               controllers.ApplicationGuru.edit()
-POST   /api/test/delete_guru               controllers.ApplicationGuru.delete()
-POST   /api/test/add_account_to_guru       controllers.ApplicationGuru.addGuruAccount()
+POST   /api/test/create_guru                   controllers.ApplicationGuru.insert()
+POST   /api/test/read_guru                     controllers.ApplicationGuru.list()
+POST   /api/test/update_guru                   controllers.ApplicationGuru.edit()
+POST   /api/test/delete_guru                   controllers.ApplicationGuru.delete()
+POST   /api/test/add_account_to_guru           controllers.ApplicationGuru.addGuruAccount()
 
 #kelas api
 
-POST   /api/test/create_kelas              controllers.ApplicationKelas.insert()
-POST   /api/test/read_kelas                controllers.ApplicationKelas.list()
-POST   /api/test/update_kelas              controllers.ApplicationKelas
-POST   /api/test/delete_kelas              controllers.ApplicationKelas.delete()
-POST   /api/test/add_siswa_to_kelas        controllers.ApplicationKelas.addSiswa()
-POST   /api/test/remove_siswa_from_kelas   controllers.ApplicationKelas.removeSiswa()
+POST   /api/test/create_kelas                  controllers.ApplicationKelas.insert()
+POST   /api/test/read_kelas                    controllers.ApplicationKelas.list()
+POST   /api/test/update_kelas                  controllers.ApplicationKelas.edit()
+POST   /api/test/delete_kelas                  controllers.ApplicationKelas.delete()
+POST   /api/test/add_siswa_to_kelas            controllers.ApplicationKelas.addSiswa()
+POST   /api/test/remove_siswa_from_kelas       controllers.ApplicationKelas.removeSiswa()
+
+#orang tua api
+POST   /api/test/create_orang_tua              controllers.ApplicationOrangTua.createOrangTua()
+POST   /api/test/read_orang_tua                controllers.ApplicationOrangTua.readOrangTua()
+POST   /api/test/update_orang_tua              controllers.ApplicationOrangTua.updateOrangTua()
+POST   /api/test/delete_orang_tua              controllers.ApplicationOrangTua.deleteOrangTua()
+POST   /api/test/add_siswa_to_orang_tua        controllers.ApplicationOrangTua.addSiswaToOrangTua()
+POST   /api/test/remove_siswa_from_orang_tua   controllers.ApplicationOrangTua.removeSiswaFromOrangTua()
+
+#matapelajaran api
+POST   /api/test/create_matapeljaran           controllers.ApplicationMataPelajaran.insert()
+POST   /api/test/read_matapelajaran            controllers.ApplicationMataPelajaran.list()
+POST   /api/test/update_matapelajaran          controllers.ApplicationMataPelajaran.edit()
+POST   /api/test/delete_matapelajaran          controllers.ApplicationMataPelajaran.delete()
+
 
 # Map static resources from the /public folder to the /assets URL path
-GET    /assets/*file                       controllers.Assets.at(path="/public", file)
+GET    /assets/*file                           controllers.Assets.at(path="/public", file)
