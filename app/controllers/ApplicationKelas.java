@@ -67,7 +67,7 @@ public class ApplicationKelas extends Controller implements Constants{
 		Ebean.save(siswa);
 		kelas.listSiswa.add(siswa);
 		Ebean.save(kelas);
-		return ok(JsonHandler.getSuitableResponse("success insert data", false));
+		return ok(JsonHandler.getSuitableResponse("success insert data", true));
 	}
 
 	public static Result removeSiswa() {

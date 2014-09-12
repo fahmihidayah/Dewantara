@@ -47,9 +47,9 @@ public class SecurityController extends Controller{
     		ObjectNode data = Json.newObject();
     		
     		data.put(AUTH_TOKEN, auth.authToken);
-    		data.put("userName", login.userName);
-    		data.put("password", login.password);
-    		data.put(ACCOUNT, user.type);
+//    		data.put("userName", login.userName);
+//    		data.put("password", login.password);
+//    		data.put(ACCOUNT, user.type);
     		
     		return ok(JsonHandler.getSuitableResponse(data, true));
     	}
