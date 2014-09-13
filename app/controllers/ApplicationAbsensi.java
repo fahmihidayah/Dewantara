@@ -13,6 +13,7 @@ import com.google.gson.reflect.TypeToken;
 import fahmi.lib.Constants;
 import fahmi.lib.CrudHandler;
 import fahmi.lib.JsonHandler;
+import fahmi.lib.RequestHandler;
 import models.Absensi;
 import models.Guru;
 import models.MataPelajaran;
@@ -93,8 +94,14 @@ public class ApplicationAbsensi extends Controller implements Constants{
 		return ok(JsonHandler.getSuitableResponse("success insert absensi", true));		
 	}
 	
-	
+	/**
+	 * not implement yet
+	 * @return
+	 */
+	@Deprecated
 	public static Result getDateAbsensi(){
+		RequestHandler requestHandler = new RequestHandler(true, frmAbsensi);
+		String arrayKey[] = {"id_mata_pelajaran", "nik" };
 		return TODO;
 	}
 	public static class DataAbsensi {
