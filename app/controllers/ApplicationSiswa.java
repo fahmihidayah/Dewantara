@@ -30,34 +30,35 @@ public class ApplicationSiswa extends Controller {
 	public static RequestHandler requestHandler = new RequestHandler(frmSiswa);
 	
 	public static Result insert() {
-		String arrayKey [] = {"nim", "name", "address", "id_orang_tua", "id_kelas"};
-		requestHandler.setArrayKey(arrayKey);
-		requestHandler.checkError();
-		if(requestHandler.isContainError()){
-			return badRequest(JsonHandler.getSuitableResponse(requestHandler.getErrorMessage(), false));
-		}
-		
-		String nim = requestHandler.getStringValue("nim");
-		String name = requestHandler.getStringValue("name");
-		String address = requestHandler.getStringValue("address");
-		Long idOrangTua = requestHandler.getLongValue("id_orang_tua");
-		Long idKelas = requestHandler.getLongValue("id_kelas");
-		
-		OrangTua orangTua = OrangTua.finder.byId(idOrangTua);
-		Kelas kelas = Kelas.finder.byId(idKelas);
-		
-		Siswa siswa = new Siswa();
-		siswa.nim = nim;
-		siswa.name = name;
-		siswa.address = address;
-		siswa.orangTua = orangTua;
-		orangTua.listSiswa.add(siswa);
-		siswa.kelas = kelas;
-		kelas.listSiswa.add(siswa);
-		Ebean.save(kelas);
-		Ebean.save(orangTua);
-		
-		return ok(JsonHandler.getSuitableResponse(siswa, true));
+//		String arrayKey [] = {"nim", "name", "address", "id_orang_tua", "id_kelas"};
+//		requestHandler.setArrayKey(arrayKey);
+//		requestHandler.checkError();
+//		if(requestHandler.isContainError()){
+//			return badRequest(JsonHandler.getSuitableResponse(requestHandler.getErrorMessage(), false));
+//		}
+//		
+//		String nim = requestHandler.getStringValue("nim");
+//		String name = requestHandler.getStringValue("name");
+//		String address = requestHandler.getStringValue("address");
+//		Long idOrangTua = requestHandler.getLongValue("id_orang_tua");
+//		Long idKelas = requestHandler.getLongValue("id_kelas");
+//		
+//		OrangTua orangTua = OrangTua.finder.byId(idOrangTua);
+//		Kelas kelas = Kelas.finder.byId(idKelas);
+//		
+//		Siswa siswa = new Siswa();
+//		siswa.nim = nim;
+//		siswa.name = name;
+//		siswa.address = address;
+//		siswa.orangTua = orangTua;
+//		orangTua.listSiswa.add(siswa);
+//		siswa.kelas = kelas;
+//		kelas.listSiswa.add(siswa);
+//		Ebean.save(kelas);
+//		Ebean.save(orangTua);
+//		
+//		return ok(JsonHandler.getSuitableResponse(siswa, true));
+		return crudHandler.create(frmSiswa.bindFromRequest());
 	}
 
 	public static Result list() {

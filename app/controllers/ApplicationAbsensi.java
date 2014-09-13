@@ -93,6 +93,10 @@ public class ApplicationAbsensi extends Controller implements Constants{
 		return ok(JsonHandler.getSuitableResponse("success insert absensi", true));		
 	}
 	
+	
+	public static Result getDateAbsensi(){
+		return TODO;
+	}
 	public static class DataAbsensi {
 		public Boolean hadir;
 		public String nik;
