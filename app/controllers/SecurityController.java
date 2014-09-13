@@ -57,7 +57,7 @@ public class SecurityController extends Controller{
     
     public static Result logout(){
     	Form<Login> formLogin = Form.form(Login.class).bindFromRequest();
-    	String authToken = formLogin.data().get("authToken");
+    	String authToken = formLogin.data().get("auth_key");
     	if(authToken == null){
     		return badRequest(JsonHandler.getSuitableResponse("data not found", false));
     	}

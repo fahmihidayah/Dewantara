@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -7,6 +8,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.gson.JsonObject;
 
 import models.Guru;
+import models.Kelas;
 import models.User;
 import fahmi.lib.Constants;
 import fahmi.lib.CrudHandler;
@@ -42,8 +44,10 @@ public class Application extends Controller implements Constants{
     	ObjectNode jsonObject =Json.newObject();
     	if(accountType.equalsIgnoreCase("guru")){
     		Guru guru = Guru.finder.where().eq("account_id", user.id).findUnique();
-    		jsonObject.put("guru", Json.toJson(guru));
+    		jsonObject.put("dataUser", Json.toJson(guru));
     	}
+    	List<Kelas> listKelas = Kelas.finder.all();
+    	jsonObject.put("kelas", Json.toJson(listKelas));
     	return ok(JsonHandler.getSuitableResponse(jsonObject, true));
     }
 

@@ -24,7 +24,7 @@ public class Guru extends Model{
 	public String email;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-//	@JsonIgnore
+	@JsonIgnore
 	public User account;
 	
 	public static Finder<String, Guru> finder = new Finder<String, Guru>(String.class, Guru.class);

@@ -38,27 +38,27 @@ public class ApplicationGuru extends Controller implements Constants {
 	}
 
 	public static Result edit() {
-		String arrayKey[] = { "nik", "name", "address", "phone", "email" };
-		Map<String, Object> requestData = crudHandler.findKey(
-				frmGuru.bindFromRequest(), arrayKey);
-		if (requestData.containsKey(ERROR)) {
-			return badRequest(JsonHandler.getSuitableResponse(
-					requestData.get(ERROR), false));
-		}
-		Guru guru = Guru.finder.byId((String) requestData.get("nik"));
-		if (guru == null) {
-			return badRequest(JsonHandler.getSuitableResponse(
-					"Data guru not found", false));
-		}
-
-		guru.nik = (String) requestData.get("nik");
-		guru.name = (String) requestData.get("name");
-		guru.address = (String) requestData.get("address");
-
-		guru.phone = (String) requestData.get("phone");
-		guru.email = (String) requestData.get("email");
-		
-		guru.update();
+//		String arrayKey[] = { "nik", "name", "address", "phone", "email" };
+//		Map<String, Object> requestData = crudHandler.findKey(
+//				frmGuru.bindFromRequest(), arrayKey);
+//		if (requestData.containsKey(ERROR)) {
+//			return badRequest(JsonHandler.getSuitableResponse(
+//					requestData.get(ERROR), false));
+//		}
+//		Guru guru = Guru.finder.byId((String) requestData.get("nik"));
+//		if (guru == null) {
+//			return badRequest(JsonHandler.getSuitableResponse(
+//					"Data guru not found", false));
+//		}
+//
+//		guru.nik = (String) requestData.get("nik");
+//		guru.name = (String) requestData.get("name");
+//		guru.address = (String) requestData.get("address");
+//
+//		guru.phone = (String) requestData.get("phone");
+//		guru.email = (String) requestData.get("email");
+//		
+//		guru.update();
 		return crudHandler.update(frmGuru.bindFromRequest());
 	}
 
