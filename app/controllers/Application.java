@@ -9,6 +9,7 @@ import com.google.gson.JsonObject;
 
 import models.Guru;
 import models.Kelas;
+import models.MataPelajaran;
 import models.User;
 import fahmi.lib.Constants;
 import fahmi.lib.CrudHandler;
@@ -47,7 +48,9 @@ public class Application extends Controller implements Constants{
     		jsonObject.put("dataUser", Json.toJson(guru));
     	}
     	List<Kelas> listKelas = Kelas.finder.all();
+    	List<MataPelajaran> listMataPelajaran = MataPelajaran.finder.all();
     	jsonObject.put("kelas", Json.toJson(listKelas));
+    	jsonObject.put("matapelajaran",  Json.toJson(listMataPelajaran));
     	return ok(JsonHandler.getSuitableResponse(jsonObject, true));
     }
 
